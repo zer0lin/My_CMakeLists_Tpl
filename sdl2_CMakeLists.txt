@@ -1,0 +1,19 @@
+cmake_minimum_required(VERSION 3.11)
+project(project_name)
+
+set(cmake_cxx_standard 11)
+add_definitions("-fexec-charset=GBK")
+
+#SDL start
+include_directories("D:/CLibiary/SDL2-devel-2.0.8-mingw/SDL2-2.0.8/x86_64-w64-mingw32/include/SDL2")
+link_directories("D:/CLibiary/SDL2-devel-2.0.8-mingw/SDL2-2.0.8/x86_64-w64-mingw32/lib")
+#SDL end
+
+include_directories(${PROJECT_SOURCE_DIR}/include)
+aux_source_directory(${PROJECT_SOURCE_DIR} SRC_LIST)
+
+add_executable(${PROJECT_NAME} ${SRC_LIST})
+# target_link_libraries(${PROJECT_NAME} libSDL2.a libSDL2main.a)
+target_link_libraries(${PROJECT_NAME} -lmingw32 -lSDL2main -lSDL2 -lm -ldinput8 -ldxguid -ldxerr8 -luser32 -lgdi32 -lwinmm -limm32 -lole32 -loleaut32 -lshell32 -lversion -luuid)
+
+# in build folder use command: cmake -G "MinGW Makefiles" ..
