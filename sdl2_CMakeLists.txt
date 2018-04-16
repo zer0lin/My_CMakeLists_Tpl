@@ -10,7 +10,7 @@ link_directories("D:/CLibiary/SDL2-devel-2.0.8-mingw/SDL2-2.0.8/x86_64-w64-mingw
 #SDL end
 
 include_directories(${PROJECT_SOURCE_DIR}/include)
-aux_source_directory(${PROJECT_SOURCE_DIR} SRC_LIST)
+aux_source_directory(${PROJECT_SOURCE_DIR}/src SRC_LIST)
 
 add_executable(${PROJECT_NAME} ${SRC_LIST})
 # target_link_libraries(${PROJECT_NAME} libSDL2.a libSDL2main.a)
